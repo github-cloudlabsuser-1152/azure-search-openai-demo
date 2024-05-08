@@ -1,99 +1,4 @@
 ---
-name: ChatGPT + Enterprise data tranmic
-description: Chat with your data using OpenAI and AI Search.
-languages:
-- python
-- typescript
-- bicep
-- azdeveloper
-products:
-- azure-openai
-- azure-cognitive-search
-- azure-app-service
-- azure
-page_type: sample
-urlFragment: azure-search-openai-demo
----
-
-# ChatGPT + Enterprise data with Azure OpenAI and AI Search
-
-> [!IMPORTANT]
-> As of November 15, 2023, Azure Cognitive Search has been renamed to Azure AI Search.
-
-### Announcing [**JavaScript**](https://aka.ms/azai/js/code), [**.NET**](https://aka.ms/azai/net/code), and [**Java**](https://aka.ms/azai/java/code) samples based on this one ([**Python**](https://aka.ms/azai/py/code)). Learn more at  https://aka.ms/azai.
-
-## Project Overview
-
-This sample demonstrates a few approaches for creating ChatGPT-like experiences over your own data using the Retrieval Augmented Generation pattern. It uses Azure OpenAI Service to access a GPT model (gpt-35-turbo), and Azure AI Search for data indexing and retrieval.
-
-The repo includes sample data so it's ready to try end to end. In this sample application we use a fictitious company called Contoso Electronics, and the experience allows its employees to ask questions about the benefits, internal policies, as well as job descriptions and roles.
-
-![RAG Architecture](docs/images/appcomponents.png)
-
-## Table of Contents
-
-- [Features](#features)
-- [Azure account requirements](#azure-account-requirements)
-- [Azure deployment](#azure-deployment)
-  - [Cost estimation](#cost-estimation)
-  - [Project setup](#project-setup)
-    - [GitHub Codespaces](#github-codespaces)
-    - [VS Code Dev Containers](#vs-code-dev-containers)
-    - [Local environment](#local-environment)
-  - [Deploying](#deploying)
-  - [Deploying again](#deploying-again)
-- [Sharing environments](#sharing-environments)
-- [Using the app](#using-the-app)
-- [Running locally](#running-locally)
-- [Monitoring with Application Insights](#monitoring-with-application-insights)
-- [Customizing the UI and data](#customizing-the-ui-and-data)
-- [Productionizing](#productionizing)
-- [Clean up](#clean-up)
-- [Troubleshooting](#troubleshooting)
-- [Resources](#resources)
-
-## Installation Instructions
-
-To install and run this project, follow these steps:
-
-1. Clone the repository: `$ git clone https://github.com/azure-samples/azure-search-openai-demo.git`
-2. Change to the project directory: `$ cd azure-search-openai-demo`
-3. Install the required dependencies: `$ npm install`
-
-## Usage Instructions
-
-To use this project, follow these steps:
-
-1. Configure the Azure resources: `$ az configure`
-2. Deploy the application: `$ azd deploy`
-3. Access the application: Open your web browser and navigate to `http://localhost:3000`
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Troubleshooting
-
-If you encounter any issues while running this project, please refer to the [troubleshooting guide](docs/troubleshooting.md) for assistance.
-
-## Additional Documentation
-
-For more information, check out the following resources:
-
-- [Azure OpenAI Service Documentation](https://docs.microsoft.com/azure/openai/)
-- [Azure AI Search Documentation](https://docs.microsoft.com/azure/search/)
-- [Azure App Service Documentation](https://docs.microsoft.com/azure/app-service/)
-- [Azure Documentation](https://docs.microsoft.com/azure/)
-
-## Badges
-
-[![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=599293758&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestUs2)
-[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/azure-search-openai-demo)
-
 name: ChatGPT + Enterprise data
 description: Chat with your data using OpenAI and AI Search.
 languages:
@@ -116,14 +21,6 @@ urlFragment: azure-search-openai-demo
 > As of November 15, 2023, Azure Cognitive Search has been renamed to Azure AI Search.
 
 ### Announcing [**JavaScript**](https://aka.ms/azai/js/code), [**.NET**](https://aka.ms/azai/net/code), and [**Java**](https://aka.ms/azai/java/code) samples based on this one ([**Python**](https://aka.ms/azai/py/code)). Learn more at  https://aka.ms/azai.
-
-## Project Overview
-
-This sample demonstrates a few approaches for creating ChatGPT-like experiences over your own data using the Retrieval Augmented Generation pattern. It uses Azure OpenAI Service to access a GPT model (gpt-35-turbo), and Azure AI Search for data indexing and retrieval.
-
-The repo includes sample data so it's ready to try end to end. In this sample application we use a fictitious company called Contoso Electronics, and the experience allows its employees to ask questions about the benefits, internal policies, as well as job descriptions and roles.
-
-![RAG Architecture](docs/images/appcomponents.png)
 
 ## Table of Contents
 
@@ -158,6 +55,10 @@ The repo includes sample data so it's ready to try end to end. In this sample ap
 ![RAG Architecture](docs/images/appcomponents.png)
 
 ## Features
+
+- Provides a ChatGPT-like experience over your own data using the Retrieval Augmented Generation pattern.
+- Uses Azure OpenAI Service to access a GPT model (gpt-35-turbo).
+- Utilizes Azure AI Search for data indexing and retrieval.
 
 **IMPORTANT:** In order to deploy and run this example, you'll need:
 
@@ -239,9 +140,10 @@ Follow these steps to provision Azure resources and deploy the application code:
 1. Login to your Azure account:
 
     ```shell
+    az login
+    ```
 
-
-1. Create a new azd environment:
+2. Create a new azd environment:
 
     ```shell
     azd env new
